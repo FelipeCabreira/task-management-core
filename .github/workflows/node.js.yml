@@ -31,6 +31,8 @@ jobs:
 
       - name: npm install server
         run: npm ci --only=production --ignore-scripts
+      - name: npm link morgan
+        run: npm link morgan
       - name: npm build server
         run: npm run build
 
