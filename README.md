@@ -1,6 +1,6 @@
 # Task Management Core
 
-![Banner](https://w7.pngwing.com/pngs/36/68/png-transparent-project-management-computer-icons-task-task-text-logo-project-management.png)
+![Banner](https://www.uwtsd.ac.uk/media/uwtsd-website/content-assets/images/faculty-of-business-management/business-school/business-and-management-banner.jpg)
 
 UNISINOS - Software Engineer Class
 
