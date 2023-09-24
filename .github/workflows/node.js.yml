@@ -26,16 +26,16 @@ jobs:
           cache: 'npm'
 
       - name: npm install client
-        working-directory: client
+        working-directory: '../../client'
         run: npm ci
       - name: npm build client
-        working-directory: client  
+        working-directory: '../../client' 
         run: npm run build --if-present
       - name: npm install server
-        working-directory: server
+        working-directory: '../../server'
         run: npm ci
       - name: npm build server
-        working-directory: server
+        working-directory: '../../server'
         run: npm run build
 
 
@@ -54,14 +54,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: npm install client
-        working-directory: client
+        working-directory: '../../client'
         run: npm ci
       - name: npm run test client
-        working-directory: client
+        working-directory: '../../client'
         run: npm test
       - name: npm install server
-        working-directory: server
+        working-directory: '../../server'
         run: npm ci
       - name: npm run test server
-        working-directory: server
+        working-directory: '../../server'
         run: npm test
