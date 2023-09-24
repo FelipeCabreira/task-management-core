@@ -1,0 +1,22 @@
+.board-view {
+  background-image: url(https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2106x1600/177135c8cdeacabe9f9c6a9a3975e31b/photo-1658457459792-f4dfe37407ca.jpg);
+  background-position: 50%;
+  position: fixed;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.board-container {
+  margin: 10px;
+  padding: 10px;
+}
+
+.tm-list {
+  display: inline-flex;
+}
