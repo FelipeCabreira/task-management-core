@@ -30,7 +30,7 @@ jobs:
           cache-dependency-path: './server/package-lock.json'
 
       - name: npm install server
-        run: npm ci
+        run: npm ci --only=production --ignore-scripts
       - name: npm build server
         run: npm run build
 
@@ -79,7 +79,7 @@ jobs:
           cache-dependency-path: './server/package-lock.json'
       
       - name: npm install server
-        run: npm ci
+        run: npm ci --only=production --ignore-scripts
       - name: npm run test server
         run: npm test
 
