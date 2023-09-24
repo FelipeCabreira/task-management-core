@@ -1,0 +1,43 @@
+{
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "require": ["tsconfig-paths/register"]
+  },
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib-utils": ["src/lib/index.ts"],
+      "@core-utils": ["src/utils/index.ts"],
+      "@config": ["src/config/index.ts"],
+      "@controllers": ["src/controllers/index.ts"],
+      "@services": ["src/services/index.ts"],
+      "@repository": ["src/repositories/index.ts"],
+      "@exceptions": ["src/exceptions/index.ts"],
+      "@validators": ["src/validators/index.ts"],
+      "@types-utils": ["src/types/utils/index.ts"],
+      "@models": ["src/models/index.ts"],
+      "@mappers": ["src/mappers/index.ts"],
+      "@types-request": ["src/types/request/index.ts"],
+      "@types-dto": ["src/types/dto/index.ts"],
+      "@types-database": ["src/types/database/index.ts"],
+      "@types-queryparams": ["src/types/queryParams/index.ts"]
+    }
+  },
+  "include": ["src/**/*.(tsx|ts|js}jsx)", "src"]
+}
