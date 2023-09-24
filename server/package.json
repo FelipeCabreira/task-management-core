@@ -10,7 +10,7 @@
     "format:check": "prettier --check \"**/*.js\" \"**/*.ts\" \"src/**/*.ts\"",
     "lint": "eslint .",
     "build": "npx tsc",
-    "prepare": "husky install"
+    "prepare": "cd.. && husky install server/.husky"
   },
   "repository": {
     "type": "git",
