@@ -10,8 +10,34 @@ on:
     branches: ['main']
 
 jobs:
-  build:
+  build-server:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: npm install server
+        run: npm ci
+      - name: npm build server
+        run: npm run build
+
+  build-client:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./client
 
     strategy:
       matrix:
@@ -26,21 +52,16 @@ jobs:
           cache: 'npm'
 
       - name: npm install client
-        working-directory: '../../client'
         run: npm ci
       - name: npm build client
-        working-directory: '../../client' 
         run: npm run build --if-present
-      - name: npm install server
-        working-directory: '../../server'
-        run: npm ci
-      - name: npm build server
-        working-directory: '../../server'
-        run: npm run build
 
 
-  test:
+  test-server:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./server
 
     strategy:
      matrix:
@@ -53,15 +74,36 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: npm install client
-        working-directory: '../../client'
-        run: npm ci
-      - name: npm run test client
-        working-directory: '../../client'
-        run: npm test
+          cache-dependency-path: './server/package-lock.json'
+      
       - name: npm install server
-        working-directory: '../../server'
         run: npm ci
       - name: npm run test server
-        working-directory: '../../server'
         run: npm test
+
+  test-client:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: ./client
+
+      strategy:
+       matrix:
+        node-version: [16.x]
+
+      steps:
+        - uses: actions/checkout@v4
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+            cache: 'npm'
+            cache-dependency-path: './client/package-lock.json'
+         
+        - name: npm install client
+          run: npm ci
+        - name: npm run test client
+          run: npm test
+
+
+        
