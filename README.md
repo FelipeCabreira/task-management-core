@@ -1,8 +1,8 @@
 # Task Management Core
 
-![Project Logo or Banner (optional)](image-url.png)
+![Banner](https://w7.pngwing.com/pngs/36/68/png-transparent-project-management-computer-icons-task-task-text-logo-project-management.png)
 
-Brief project description here.
+UNISINOS - Software Engineer Class
 
 ## Table of Contents
 
@@ -18,23 +18,29 @@ Brief project description here.
 
 ## About
 
-Briefly introduce your project here. Explain what it does and why it's useful. You can also mention the technologies you're using.
+This is a demo project for a university software engineering class, to demonstrate the integration of End to End usages of a web application
 
 ## Demo
 
-Include a link to a live demo or a GIF showcasing your project's features.
+https://felipecabreira.github.io/task-management-core/
 
 ## Features
 
-List the key features of your project:
+- Creation of boards
+- Creation of lists
+- Creation of tasks
 
-- Feature 1
-- Feature 2
-- Feature 3
 
 ## Getting Started
 
-Provide instructions on how to get your project up and running. Include any setup steps and prerequisites.
+1. server
+  cd ./server
+  npm i
+  npm start
+2. client
+  cd ./client
+  npm i
+  npm start
 
 ### Prerequisites
 
