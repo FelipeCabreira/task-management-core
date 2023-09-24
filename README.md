@@ -34,17 +34,17 @@ https://felipecabreira.github.io/task-management-core/
 ## Getting Started
 
 1. server
-  cd ./server
-  npm i
-  npm start
+ -  cd ./server
+ - npm i
+ - npm start
 2. client
-  cd ./client
-  npm i
-  npm start
+ - cd ./client
+ - npm i
+- npm start
 
 ### Prerequisites
 
-List any software, libraries, or tools that users need to have installed before they can use your project.
+
 
 ### Installation
 
